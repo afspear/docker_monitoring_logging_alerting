@@ -14,6 +14,7 @@ services:
       - ./filebeat/filebeat.yml:/filebeat.yml
       - /var/log:/host-logs
     restart: always
+    user: root
     labels:
       container_group: logging
     logging:
@@ -34,6 +35,8 @@ services:
       - ./logstash/config:/config
       - ./logstash/patterns:/opt/logstash/extra_patterns
     restart: always
+    ports:
+      - "12201:12201/udp"
     labels:
       container_group: logging
     networks:

@@ -25,7 +25,7 @@ services:
 
   # Runs on your node(s) and forwards container metrics to Prometheus.
   master-cadvisor:
-    image: google/cadvisor:v0.25.0
+    image: google/cadvisor:v0.27.4
     expose:
       - 8080
     volumes:
@@ -34,6 +34,7 @@ services:
       - /sys:/sys:ro
       - /var/lib/docker/:/var/lib/docker:ro
     restart: always
+    user: root
     labels:
       container_group: monitoring
     logging:
