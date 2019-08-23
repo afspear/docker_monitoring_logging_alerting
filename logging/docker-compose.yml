@@ -134,11 +134,11 @@ services:
       - ELASTICSEARCH_HOST=elasticsearch
     labels:
       container_group: monitoring
-    logging:
-      driver: gelf
-      options:
-        gelf-address: udp://172.16.0.38:12201
-        labels: container_group
+#    logging:
+#      driver: gelf
+#      options:
+#        gelf-address: udp://172.16.0.38:12201
+#        labels: container_group
 
 #########################################################
 ####                   Networking                    ####
